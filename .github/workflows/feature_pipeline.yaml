@@ -8,7 +8,7 @@ jobs:
 
   feature_pipeline:
 
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
