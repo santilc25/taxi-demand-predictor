@@ -2,7 +2,7 @@ name: hourly-taxi-demand-feature-pipeline
 
 on:
   schedule:
-  - cron: '20 * * * *'
+  - cron: '44 * * * *'
 
 jobs:
 
@@ -16,7 +16,7 @@ jobs:
     - name: Setup Python 3.9
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9.0'
+        python-version: '3.9'
 
     - name: Install Poetry
       uses: snok/install-poetry@v1
