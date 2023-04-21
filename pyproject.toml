@@ -6,7 +6,7 @@ authors = ["Santiago Lopez <santiagolopez@sqdm.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.9.16"
+python = "3.9.0"
 jupyter = "^1.0.0"
 requests = "^2.28.2"
 pathlib = "^1.0.1"
@@ -20,6 +20,8 @@ lightgbm = "^3.3.5"
 optuna = "^3.1.0"
 python-dotenv = "^1.0.0"
 hopsworks = "^3.0.5"
+streamlit = "^1.21.0"
+geopandas = "^0.12.2"
 
 
 [build-system]
