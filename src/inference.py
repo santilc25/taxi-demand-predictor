@@ -64,7 +64,7 @@ def load_batch_of_features_from_store(current_date:datetime) -> pd.DataFrame:
     x = np.ndarray(shape=(len(location_ids),n_features),dtype=np.float32)
     for i, location_id in enumerate(location_ids):
         ts_data_i = ts_data.loc[ts_data.pickup_location_id == location_id,:]
-        ts_data_i = ts_data.sort_values(by=['pickup_hour'])
+        ts_data_i = ts_data_i.sort_values(by=['pickup_hour'])
         x[i,:] = ts_data_i['rides'].values
     
     features = pd.DataFrame(
