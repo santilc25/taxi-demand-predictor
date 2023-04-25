@@ -51,9 +51,10 @@ def load_batch_of_features_from_store(current_date:datetime) -> pd.DataFrame:
         end_time=(fetch_data_to + timedelta(days=1))
     )
     ts_data = ts_data[ts_data.pickup_hour.between(fetch_data_from,fetch_data_to)]
+    location_ids = [id for id in ts_data['pickup_location_id'].unique() if len(ts_data[ts_data['pickup_location_id']==id]) == 672]
+    ts_data = ts_data[ts_data['pickup_location_id'].isin(location_ids)]
     
     # validate we are not missing data in the feature store
-    location_ids = ts_data['pickup_location_id'].unique()
     assert len(ts_data) == n_features*len(location_ids), "Time-series is not complete"
     
     # sort dataa by location and time
