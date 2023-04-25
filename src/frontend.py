@@ -24,7 +24,7 @@ st.set_page_config(layout="wide")
 
 # title
 # current date = datetime.strptime('2023-04-18, %Y-%m-%d %H:%M:%S')
-current_date = pd.to_datetime(datetime.now()).floor('H')
+current_date = pd.to_datetime(datetime.utcnow()).floor('H')
 st.title(f'Taxi demand prediction ')
 st.header(f'{current_date}')
 
